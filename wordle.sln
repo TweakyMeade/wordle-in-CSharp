@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wordleWinForms", "wordle\wordleWinForms.csproj", "{DBCDFA30-A9A1-4B31-8E61-127F9D313BFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wordleConsole", "wordleConsole\wordleConsole.csproj", "{30EDA50F-4495-4524-80B8-7EC8C885A7E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBCDFA30-A9A1-4B31-8E61-127F9D313BFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBCDFA30-A9A1-4B31-8E61-127F9D313BFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBCDFA30-A9A1-4B31-8E61-127F9D313BFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBCDFA30-A9A1-4B31-8E61-127F9D313BFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30EDA50F-4495-4524-80B8-7EC8C885A7E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30EDA50F-4495-4524-80B8-7EC8C885A7E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30EDA50F-4495-4524-80B8-7EC8C885A7E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30EDA50F-4495-4524-80B8-7EC8C885A7E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2368FD9-B497-4613-ACEB-D6183B92262E}
+	EndGlobalSection
+EndGlobal
