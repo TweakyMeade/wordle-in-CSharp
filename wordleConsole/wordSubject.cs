@@ -11,16 +11,26 @@ namespace wordleConsole
 
 
         private string[] wordsArray = new string[] { "Test!" };
+        private string chosenWord;
+        private List<string> chosenArray =new List<string>();
 
-        private string[] chosenArray;
-
-        public string roundWord() { return wordsArray[0]; }
-        
-        public string[] letterArray() 
+        public wordSubject()
         {
-            chosenArray = wordsArray[0].Split();
-            return chosenArray;
+            chosenWord = wordsArray[0];
         }
 
+        public string roundWord() 
+        { 
+            return chosenWord; 
+        }
+        
+        public List<string> letterArray() 
+        {
+            foreach (char i in chosenWord.ToCharArray())
+            {
+                chosenArray.Add(i.ToString());
+            }
+            return chosenArray;
+        }
     }
 }
