@@ -9,25 +9,28 @@ namespace wordleConsole
         private inputLogic guess;
         private wordLogic awnser;
 
-        private List<string> correctLettersUsed = new List<string>();
-        private List<string> wrongLettersUsed = new List<string>();
-        private List<string> wrongWords = new List<string>();
+        public List<string> correctLettersUsed { get; }
+        public List<string> wrongLettersUsed { get; }
+        public List<string> wrongWords { get; }
         public string correctPlacement { get; }
         public bool winCondition { get; }
         public bool notAlreadyUsed { get; }
+        public string billBoard { get; }
+
+
+
         private sharedFuncs sharedFuncs;
 
         public gameLogic(inputLogic _guess, wordLogic _awnser) 
         {
             guess = _guess;
             awnser = _awnser;
-
-
-           winCondition = true;
-           
+            winCondition = win();
+            notAlreadyUsed = notAlreadyUsedFunc();
+            billBoard = correctPlacementCheccker();
         }
 
-         private string correctPlacementCheccker(string inputWord)
+         private string correctPlacementCheccker()
         {
             string correctPlacementOutput = "";
             for (int i = 0; i< guess.letterList.Count; i++)
@@ -40,17 +43,15 @@ namespace wordleConsole
             return correctPlacementOutput;
         }
 
-        public bool win(string inputWin)
+        public bool win()
         {
-            return string.Equals(inputWin, trueWord);
+            return string.Equals(guess.word, awnser.word);
         }
         public bool notAlreadyUsedFunc()
         { 
-            if (wrongWords.Contains()) { return true; }
+            if (wrongWords.Contains(guess.word)) { return true; }
             else { return false; }
         }
-        public List<string> wrongPlacement() { return correctLettersUsed; }
-        public List<string> wrongLetter() { return wrongLettersUsed; }
 
 
 
