@@ -1,51 +1,56 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace wordleConsole
 {
     internal class gameLogic
     {
-        private string inputWord;
-        private char[] inputCharArray;
-        private string trueWord;
-        private char[] trueCharArray;
-        private List<char> correctLettersUsed = new List<char>();
-        private List<char> wrongLettersUsed = new List<char>();
+
+        private inputLogic guess;
+        private wordLogic awnser;
+
+        private List<string> correctLettersUsed = new List<string>();
+        private List<string> wrongLettersUsed = new List<string>();
+        private List<string> wrongWords = new List<string>();
         public string correctPlacement { get; }
         public bool winCondition { get; }
+        public bool notAlreadyUsed { get; }
+        private sharedFuncs sharedFuncs;
 
-
-
-        public gameLogic(string _inputWord,string _trueWord) 
+        public gameLogic(inputLogic _guess, wordLogic _awnser) 
         {
-            string inputWord = _inputWord.ToUpper();
-            string trueWord = _trueWord.ToUpper();
-            inputCharArray = inputWord.ToCharArray();
-            trueCharArray= trueWord.ToCharArray();
-            correctPlacement = correctPlacementCheccker();
-            winCondition = string.Equals(inputWord, trueWord);
-            
+            guess = _guess;
+            awnser = _awnser;
+
+
+           winCondition = true;
+           
         }
 
-         private string correctPlacementCheccker()
+         private string correctPlacementCheccker(string inputWord)
         {
             string correctPlacementOutput = "";
-            for (int i = 0; i< trueCharArray.Length; i++)
+            for (int i = 0; i< guess.letterList.Count; i++)
             {
-                if (inputCharArray[i] == trueCharArray[i]) { correctPlacementOutput += trueCharArray[i].ToString(); }
-                else if (trueCharArray.Contains(inputCharArray[i])) { correctLettersUsed.Add(inputCharArray[i]); correctPlacementOutput += "_"; }
-                else { wrongLettersUsed.Add(inputCharArray[i]);  correctPlacementOutput += "_"; }
+                if (guess.letterList[i] == awnser.letterList[i]) { correctPlacementOutput += guess.letterList[i]; }
+                else if (awnser.letterList.Contains(guess.letterList[i])) { correctLettersUsed.Add(guess.letterList[i]); wrongWords.Add(awnser.word); correctPlacementOutput += "0"; }
+                else { wrongLettersUsed.Add(guess.letterList[i]); wrongWords.Add(awnser.word); correctPlacementOutput += "_"; }
             }
 
             return correctPlacementOutput;
         }
 
-        public List<char> wrongPlacement() { return correctLettersUsed; }
-        public List<char> wrongLetter() { return wrongLettersUsed; }
+        public bool win(string inputWin)
+        {
+            return string.Equals(inputWin, trueWord);
+        }
+        public bool notAlreadyUsedFunc()
+        { 
+            if (wrongWords.Contains()) { return true; }
+            else { return false; }
+        }
+        public List<string> wrongPlacement() { return correctLettersUsed; }
+        public List<string> wrongLetter() { return wrongLettersUsed; }
 
 
 

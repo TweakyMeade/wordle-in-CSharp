@@ -10,16 +10,23 @@ namespace wordleConsole
     {
         static void Main(string[] args)
         {
-            wordSubject subject = new wordSubject();
-            gameLogic round = new gameLogic("test1", "jets1");
+            wordLogic subject = new wordLogic();
+
+            gameLogic round = new wordLogic("test1", "test1");
             Console.WriteLine(round.winCondition);
             Console.WriteLine(round.correctPlacement);
             Console.WriteLine("wrong placement:");
             charPrint(round.wrongPlacement());
             Console.WriteLine("wrong letter:");
             charPrint(round.wrongLetter());
+            Console.WriteLine($"Not Equil:{round.winCondition}");
 
         }
-        static void charPrint(List<char> x) { foreach (char i in x) { Console.Write(i.ToString());  } Console.Write("\n"); }
+        static void charPrint(List<string> x) 
+        { 
+            Console.WriteLine(x.Count); 
+            foreach (string i in x) { Console.Write(i.ToString());  } 
+            Console.Write("\n"); 
+        }
     }
 }
