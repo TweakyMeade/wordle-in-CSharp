@@ -10,15 +10,15 @@ namespace wordleConsole
     {
 
 
-        private string[] wordsArray = new string[] { "Test!" };
-        public string word { get; }
-        public List<string> letterList { get; }
-        private sharedFuncs sharedFuncs;
+        public List<string> wordsArray = new List<string> { "TEST!", "TEST2", "TEST3" };
+        public string word;
+        public List<string> letterList; 
+        private sharedFuncs sharedFuncs = new sharedFuncs();
 
         public wordLogic()
         {
-            word = wordsArray[0];
-            letterList = sharedFuncs.charArrayToStringList(word.ToCharArray());
+            word = wordsArray[0].ToUpper();
+            letterList = sharedFuncs.charArrayToStringList(word);
 
         }
     }

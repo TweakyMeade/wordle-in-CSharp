@@ -43,9 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="gameLogic.cs" />
+    <Compile Include="consoleRender.cs" />
+    <Compile Include="sharedFuncs.cs" />
+    <Compile Include="inputLogic.cs" />
+    <Compile Include="game.cs" />
     <Compile Include="wordLogic.cs" />
-    <Compile Include="wordSubject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

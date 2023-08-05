@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,14 +10,16 @@ namespace wordleConsole
 
     internal class inputLogic
     {
-        public string word { get; }
-        public List<string> letterList { get; }
-        private sharedFuncs sharedFuncs;
-        public inputLogic(string _inputWord)
-        {
-            word = _inputWord.ToUpper();
+        public string word;
+        public List<string> usedWords = new List<string>();
 
-            letterList = sharedFuncs.charArrayToStringList(word.ToCharArray());
-        }
+
+        private sharedFuncs sharedFuncs = new sharedFuncs();
+
+
+       public List<string> letterList()
+       { 
+           return sharedFuncs.charArrayToStringList(word); 
+       }
     }
 }
