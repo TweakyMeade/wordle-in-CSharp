@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wordleWinForms", "wordle\wordleWinForms.csproj", "{DBCDFA30-A9A1-4B31-8E61-127F9D313BFF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wordleConsole", "wordleConsole\wordleConsole.csproj", "{30EDA50F-4495-4524-80B8-7EC8C885A7E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scratchpad", "Scratchpad\Scratchpad.csproj", "{183661C8-56A7-4ACF-87C6-1D569AE92B53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scratchpad", "Scratchpad\Scratchpad.csproj", "{183661C8-56A7-4ACF-87C6-1D569AE92B53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DBCDFA30-A9A1-4B31-8E61-127F9D313BFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DBCDFA30-A9A1-4B31-8E61-127F9D313BFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DBCDFA30-A9A1-4B31-8E61-127F9D313BFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DBCDFA30-A9A1-4B31-8E61-127F9D313BFF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{30EDA50F-4495-4524-80B8-7EC8C885A7E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{30EDA50F-4495-4524-80B8-7EC8C885A7E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30EDA50F-4495-4524-80B8-7EC8C885A7E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
