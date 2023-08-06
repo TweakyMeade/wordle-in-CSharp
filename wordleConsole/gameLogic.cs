@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace wordleConsole
 {
-    internal class game
+    internal class gameLogic
     {
 
         private inputLogic guess;
@@ -20,7 +20,7 @@ namespace wordleConsole
         public string billBoard;
 
 
-        public game(inputLogic _guess, wordLogic _awnser)
+        public gameLogic(inputLogic _guess, wordLogic _awnser)
         {
             guess = _guess;
             awnser = _awnser;
@@ -43,22 +43,21 @@ namespace wordleConsole
         }
 
 
-        public void winCondition()
+        public bool winCondition()
         {
-            win = string.Equals(guess.word, awnser.word);
+             return string.Equals(guess.word, awnser.word);
         }
         public void inputWord()
         {
             while (true)
             {
-                Console.Write("\nGuess:");
                 string inputT = Console.ReadLine().ToUpper();
                 if (!guess.usedWords.Contains(inputT) && inputT.Length == 5 && awnser.wordsArray.Contains(inputT))
                 {
                     guess.word = inputT;
                     correctPlacementCheccker();
                     guess.usedWords.Add(inputT);
-                    winCondition();
+                    win = winCondition();
                     break;
                 }
                 Console.WriteLine($"{inputT} is not valid: ");
@@ -66,7 +65,7 @@ namespace wordleConsole
                 else if (awnser.wordsArray.Contains(inputT)) {Console.Write("Used word before\n"); }
                 else { Console.Write("Not a Word!\n"); }
             }
-
+            
         }
 
         public string trueWord() { return awnser.word; }

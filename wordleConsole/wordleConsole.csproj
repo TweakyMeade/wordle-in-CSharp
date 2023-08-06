@@ -44,9 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="consoleRender.cs" />
+    <Compile Include="gameRun.cs" />
     <Compile Include="sharedFuncs.cs" />
     <Compile Include="inputLogic.cs" />
-    <Compile Include="game.cs" />
+    <Compile Include="gameLogic.cs" />
     <Compile Include="wordLogic.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
