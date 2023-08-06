@@ -15,7 +15,7 @@ namespace wordleConsole
         public List<string> bilboardHistory = new List<string>() { "_____" };
 
         public string correctPlacement;
-        public bool winCondition;
+        public bool win;
         public bool notAlreadyUsed;
         public string billBoard;
 
@@ -43,29 +43,33 @@ namespace wordleConsole
         }
 
 
-        public bool win()
+        public void winCondition()
         {
-            return string.Equals(guess.word, awnser.word);
+            win = string.Equals(guess.word, awnser.word);
         }
         public void inputWord()
         {
             while (true)
             {
+                Console.Write("\nGuess:");
                 string inputT = Console.ReadLine().ToUpper();
                 if (!guess.usedWords.Contains(inputT) && inputT.Length == 5 && awnser.wordsArray.Contains(inputT))
                 {
                     guess.word = inputT;
                     correctPlacementCheccker();
                     guess.usedWords.Add(inputT);
+                    winCondition();
                     break;
                 }
                 Console.WriteLine($"{inputT} is not valid: ");
-                if (inputT.Length != 5) { Console.Write("Not 5 letters long!"); }
-                else if (awnser.wordsArray.Contains(inputT)) {Console.Write("Used word before"); }
+                if (inputT.Length != 5) { Console.Write("Not 5 letters long!\n"); }
+                else if (awnser.wordsArray.Contains(inputT)) {Console.Write("Used word before\n"); }
                 else { Console.Write("Not a Word!\n"); }
             }
 
         }
+
+        public string trueWord() { return awnser.word; }
     }
 }
 
